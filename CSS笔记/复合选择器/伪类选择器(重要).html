@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 链接伪类选择器 
+        a:link {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:visited {
+            color: orange;
+        }
+
+        a:hover {
+            color: skyblue;
+        }
+        a:active {
+            color: green;
+        } */
+        /* 实际用法： */
+        a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #369;
+            text-decoration: underline;
+        }
+
+        /* :focus伪类选择器 */
+        input:focus {
+            background-color: pink;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#">花鸟风月</a>
+    <a href="#">Unknown website</a>
+    <input type="text">
+    <input type="text">
+    <input type="text">
+</body>
+
+</html>
