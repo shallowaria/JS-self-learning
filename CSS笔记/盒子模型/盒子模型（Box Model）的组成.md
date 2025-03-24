@@ -1,0 +1,2 @@
+CSS盒子模型本质上就是一个盒子，封装周围的HTML元素
+border边框、content内容、padding内边距、margin外边距
