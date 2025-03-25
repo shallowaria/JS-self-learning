@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.盒子必须指定了宽度;2.盒子的左右边距都设置为auto */
+        .header {
+            width: 900px;
+            height: 200px;
+            margin: 0 auto;
+            background-color: pink;
+            text-align: center;
+        }
+
+        /* 以上方法是让块级元素水平居中 */
+        /* 行内元素或者行内块元素水平居中给其父元素添加 text-align:center 即可 */
+
+        /* 外边距合并塌陷，对嵌套关系的块元素，父元素有上外边距同时子元素也有上外边距，此时父元素会塌陷较大的外边距 */
+        /* 解决方案：1.为父元素定义上边框；2.为父元素定义上内边距；3.为父元素添加overflow:hidden;(常用) */
+        /* tips:浮动、固定、绝对定位的盒子不会有塌陷问题 */
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: purple;
+            margin-top: 50px;
+            /* border: 1px solid red; */
+            /* border: 1px solid transparent;  */
+            /* padding: 1px; */
+            overflow: hidden;
+        }
+
+        .son {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin-top: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <span>里面的文字</span>
+    </div>
+    <div class="header">
+        <img src="../../img/200x200_Jinhsi/01.png" alt="">
+    </div>
+
+    <div class="father">
+        <div class="son"></div>
+    </div>
+</body>
+
+</html>
