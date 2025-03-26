@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>很多父盒子不方便给高度，如无限下拉的淘宝页，每一篇不同长短的新闻页等。因而理想中的状态是让子盒子撑开父盒，来动态调整高度</p>
+    <p>但是子盒子浮动后不占有位置，父盒子高度为0时，会影响下面的标准流盒子。</p>
+    <p>清除浮动之后，父级会根据浮动的子盒子自动检测高度，避免影响下面的标准流。</p>
+    <p>语法:clear:属性值{left right <strong>both</strong>}</p>
+    <p>清除浮动方法： 1.额外标签法（隔墙法）;2.父级添加overflow属性;3.父级添加after伪属性4.父级添加双伪属性</p>
+</body>
+
+</html>

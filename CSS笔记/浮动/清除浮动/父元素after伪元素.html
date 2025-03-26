@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 优点:没有增加标签，结构更简单，受大厂好评；缺点：照顾低版本浏览器 */
+        /* 2.代码如下，after伪元素在box后添加一个新的盒子，后续做法同额外标签法 */
+        .clearfix:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+
+        .box {
+            border: 1px solid blue;
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .damao {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .ermao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        .footer {
+            background-color: black;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.此处添加类属性clearfix -->
+    <div class="box clearfix">
+        <div class="damao">大毛</div>
+        <div class="ermao">二毛</div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>

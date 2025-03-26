@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 优点：代码更简洁，受大厂好评；缺点：照顾低版本浏览器 */
+        /* 2.添加如下代码，前后各添加一个空盒子 */
+        .clearfix:before,
+        .clearfix:after {
+            content: "";
+            display: table;
+        }
+
+        .clearfix:after {
+            clear: both;
+        }
+
+        .box {
+            border: 1px solid blue;
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        .damao {
+            float: left;
+            width: 300px;
+            height: 200px;
+            background-color: pink;
+        }
+
+        .ermao {
+            float: left;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        .footer {
+            background-color: black;
+            height: 250px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 1.给父盒子添加类clearfix -->
+    <div class="box clearfix">
+        <div class="damao">大毛</div>
+        <div class="ermao">二毛</div>
+    </div>
+    <div class="footer"></div>
+</body>
+
+</html>
