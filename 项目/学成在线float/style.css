@@ -339,3 +339,79 @@ a {
     font-size: 12px;
     color: #333;
 }
+
+.container .header {
+    height: 45px;
+    line-height: 45px;
+    margin-top: 38px;
+    margin-bottom: 10px;
+    background-color: #fff;
+}
+
+.container .header h4 {
+    float: left;
+    font-size: 18px;
+    font-weight: 400;
+    margin-left: 30px;
+}
+
+.container .header ul li a {
+    display: block;
+    float: left;
+    padding: 0 36px;
+    color: #a28695;
+    font-size: 16px;
+}
+
+.container .header ul li a:hover {
+    color: #00a4ff;
+}
+
+.container .header .first {
+    margin-left: 300px;
+}
+
+.container .header .header-jump {
+    float: right;
+    padding-right: 30px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+.container .left {
+    float: left;
+    margin-right: 10px;
+}
+
+.container .right img {
+    width: 100%;
+}
+
+.container .right {
+    float: left;
+}
+
+.container .right ul li {
+    float: left;
+    width: 220px;
+    background-color: #fff;
+    margin-right: 15px;
+    margin-top: 10px;
+}
+
+.container .right ul li h4 {
+    font-weight: 400;
+    margin: 10px 0 10px 10px;
+    color: #050505;
+    font-size: 14px;
+}
+
+.container .right ul li .info {
+    margin: 10px 0 10px 10px;
+    font-size: 12px;
+    color: #999;
+}
+
+.container .right span {
+    color: #ff7c2d;
+}
