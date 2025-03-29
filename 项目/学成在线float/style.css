@@ -261,6 +261,7 @@ a {
 }
 
 .box-bd ul li {
+    position: relative;
     float: left;
     margin-right: 15px;
     margin-bottom: 15px;
@@ -339,10 +340,12 @@ a {
     font-size: 12px;
     color: #333;
 }
+
 .container {
     height: 450px;
     margin-bottom: 30px;
 }
+
 .container .header {
     height: 45px;
     line-height: 45px;
@@ -419,4 +422,12 @@ a {
 
 .container .right span {
     color: #ff7c2d;
+}
+
+.scam {
+    position: absolute;
+    top: 5px;
+    right: -5px;
+    width: 50px;
+    height: 40px;
 }

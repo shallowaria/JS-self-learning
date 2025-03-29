@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box1 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            top: 100px;
+            left: 100px;
+        }
+
+        .box2 {
+            width: 200px;
+            height: 300px;
+            background-color: aquamarine;
+        }
+    </style>
+</head>
+
+<body>
+    <p>元素在移动位置的时候，是相对于它<strong>原来的位置</strong>来说的</p>
+    <p><strong>原来在标准流的位置会继续占有</strong>，后面的盒子仍然以标准流的方式对它</p>
+    <p>用处：给绝对定位当爹</p>
+    <div class="box1"></div>
+    <div class="box2"></div>
+</body>
+
+</html>

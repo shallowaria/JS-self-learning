@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .zm-qrcode-new {
+            position: fixed;
+            top: 170px;
+            right: 14px;
+        }
+
+        .w {
+            width: 800px;
+            height: 1400px;
+            background-color: aquamarine;
+            margin: 0 auto;
+        }
+
+        .fixed {
+            width: 50px;
+            height: 150px;
+            background-color: skyblue;
+            position: fixed;
+            left: 50%;
+            margin-left: 405px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="zm-qrcode-new">
+        <img src="../../img/image_transparent.png" alt="">
+    </div>
+
+    <div class="fixed"></div>
+    <div class="w">
+        版心盒子 800像素
+        <p>固定于浏览器可视区域</p>
+        <p>1.以浏览器的可视窗口为参照点移动元素</p>
+        <p>2.不占有原先位置（脱标）</p>
+        <p>3.小算法:固定在版心右侧：1） left:50% 2） margin-left 版心盒子宽的一半 </p>
+        <p>4.控制图片的父盒子而不是控制图片</p>
+    </div>
+</body>
+
+</html>

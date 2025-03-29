@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grandpa {
+            position: relative;
+            width: 800px;
+            height: 800px;
+            background-color: blueviolet;
+            margin: 0 auto;
+        }
+
+        .father {
+            position: relative;
+            width: 500px;
+            height: 500px;
+            background-color: skyblue;
+        }
+
+        .son {
+            position: absolute;
+            /* 左下角 */
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+        }
+
+        .son2 {
+            width: 200px;
+            height: 200px;
+            background-color: burlywood;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grandpa">
+        <div class="father">
+            <p>在移动位置时，相对于其祖先元素来说</p>
+            <p>1.如没有祖先元素或祖先元素没有定位，以浏览器为准定位（Document文档）</p>
+            <p>2.如果祖先元素右定位（相对、绝对、固定），则以<strong>最近一级有定位</strong>祖先元素为参考点移动位置</p>
+            <p>3.绝对定位不占有原先位置（脱标）</p>
+            <p>绝对定位（固定定位）会压住标准流所有的内容</p>
+            <div class="son"></div>
+            <div class="son2">此处↓占据了son的位置</div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+        }
+
+        .xiongda {
+            background-color: pink;
+            z-index: 1;
+
+        }
+
+        .xionger {
+            background-color: green;
+            left: 50px;
+            top: 50px;
+            z-index: 2;
+        }
+
+        .guangtouqiang {
+            background-color: aquamarine;
+            left: 100px;
+            top: 100px;
+            z-index: 3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box xiongda">熊大</div>
+    <div class="box xionger">熊二</div>
+    <div class="box guangtouqiang">
+        光头强
+        <p>1.Z轴即电脑屏幕与脸直接的距离,值相同后来居上</p>
+        <p>2.只有定位才有这个属性</p>
+        <p>3.数字后不能加单位</p>
+    </div>
+</body>
+
+</html>
