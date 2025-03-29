@@ -1,0 +1,69 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
+
+.tb-promo {
+    position: relative;
+    width: 520px;
+    height: 280px;
+    margin: 200px auto;
+}
+
+.tb-promo>img {
+    width: 520px;
+    height: 280px;
+}
+
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    margin-top: -12.5px;
+    text-decoration: none;
+    text-align: center;
+    width: 20px;
+    height: 25px;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.prev {
+    left: 0;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+
+}
+
+.next {
+    /* 盒子多属性（既有left又有right）时默认先左后右，先上后下 */
+    right: 0;
+    border-top-left-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+
+.promo-nav {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 7px;
+}
+
+.promo-nav li {
+    float: left;
+    margin: 3px;
+    background-color: #fff;
+    height: 8px;
+    width: 8px;
+    border-radius: 4px;
+}
+
+.promo-nav .selected {
+    background-color: #f4520f;
+}
