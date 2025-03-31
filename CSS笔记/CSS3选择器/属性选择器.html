@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* tips：类选择器、属性选择器、伪类选择器的权重皆为10 */
+        /* 1.选择input中具有placeholder属性的元素 */
+        input[placeholder] {
+            color: aquamarine;
+            font-size: 16px;
+        }
+
+        /* 2.根据属性=值的某些元素来选择 */
+        input[type=password] {
+            color: pink;
+        }
+
+        /* 3.选择div中具有class属性且属性值以icon开头的元素 */
+        div[class^=icon] {
+            color: red;
+        }
+
+        /* 4.选择section具有class属性且属性值以data结尾的元素 */
+        section[class$=date] {
+            color: blue;
+        }
+        /* 5.选择具有class属性且值中含有icon的section/div元素 */
+        section[class*=icon],
+        div[class*=icon] {
+            color: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" placeholder="请输入用户名">
+    <input type="text" value="114514">
+
+    <!-- input后加:可以补足name和id -->
+    <input type="text" name="" id="">
+    <input type="password" name="" id="">
+
+    <div class="icon1">小图标1</div>
+    <div class="icon2">小图标2</div>
+    <div class="icon3">小图标3</div>
+    <div class="icon4">小图标4</div>
+    <div class="mole">摸了！</div>
+
+    <section class="icon1-data">我是蜘蛛侠</section>
+    <section class="icon2-data">我是嘀嘟侠</section>
+    <section class="icon3-ico">我是谁</section>
+</body>
+
+</html>

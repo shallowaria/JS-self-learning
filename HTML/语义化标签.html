@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .clearfix:after {
+            visibility: hidden;
+            clear: both;
+            display: block;
+            content: ".";
+            height: 0
+        }
+
+        header,
+        nav {
+            height: 120px;
+            width: 800px;
+            background-color: aquamarine;
+            border-radius: 15px;
+            margin: 15px auto;
+        }
+
+        article {
+            float: left;
+            width: 600px;
+            height: 500px;
+            background-color: aquamarine;
+            border-radius: 15px;
+        }
+
+        section {
+            margin-top: 50px;
+            width: 500px;
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        aside {
+            float: right;
+            width: 500px;
+            height: 500px;
+            background-color: #ccc;
+        }
+
+        footer {
+            width: 800px;
+            height: 100px;
+            background-color: aquamarine;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+
+<body>
+    <header>头部标签<p>注意:1.用于搜索引擎<br>2.可以多次使用<br>3.IE9中需要转换为块级元素</p>
+    </header>
+    <nav>导航栏标签</nav>
+    <div class="clearfix">
+        <article class="clearfix">
+            内容标签
+            <section>定义文档某个区域</section>
+        </article>
+        <aside>侧边栏标签</aside>
+    </div>
+    <footer>尾部标签</footer>
+    <input type="email">
+    <input type="submit">
+
+</body>
+
+</html>
