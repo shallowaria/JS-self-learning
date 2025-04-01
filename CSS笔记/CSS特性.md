@@ -20,3 +20,9 @@
     !important 重要的   ∞ 无穷大
 
 注意：a链接由浏览器专门制定了一个样式 蓝色的&有下划线
+
+图片模糊filter
+filter: 函数(); 如filter: blur(5px);
+
+计算盒子宽度:width:calc函数
+width:calc(100%-80px)

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.E:first-child 父元素（此处为ul）中第一个子元素E */
+        ul li:first-child {
+            color: pink;
+        }
+
+        /* 2.E:last-child 父元素（此处为ul）中最后一个子元素E */
+        ul li:last-child {
+            color: aquamarine;
+        }
+
+        /* 3.E:nth-child()选择父元素里的一个或多个特定的子元素
+           括号里可以填数字、关键字、公式 */
+        /* 1)数字： */
+        ul li:nth-child(4) {
+            color: skyblue;
+        }
+
+        /* 2)关键字:even偶数，odd奇数 */
+        ul li:nth-child(even) {
+            background-color: #ccc;
+        }
+
+        /* 3)公式:nth-child(n) n表示从0开始累加 括号内字母必须为n
+           常用有 2n/2n+1/5n/n+5/-n+5 */
+        ol li:nth-child(n) {
+            background-color: aquamarine;
+        }
+
+        /* 4.E:first-of-type指定类型E的第一个 */
+        ol li:first-of-type {
+            color: pink;
+        }
+
+        /* 5.E:last-of-type指定类型E的最后一个 */
+        ol li:last-of-type {
+            color: pink;
+        }
+
+        /* 6.E:nth-of-type()指定类型E的第n个 */
+        ol li:nth-of-type(even) {
+            color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <p>用于父级里面的第几个孩子</p>
+    <ul>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ul>
+    <ol>
+        <li>我是第1个孩子</li>
+        <li>我是第2个孩子</li>
+        <li>我是第3个孩子</li>
+        <li>我是第4个孩子</li>
+        <li>我是第5个孩子</li>
+        <li>我是第6个孩子</li>
+        <li>我是第7个孩子</li>
+        <li>我是第8个孩子</li>
+    </ol>
+
+    <!-- 区别 -->
+    <p>1.nth-child会把所有盒子排序,此处“光头强”为1号,section div:nth-child(1)不会匹配“熊大”</p>
+    <p>2.nth-of-type会把"指定的"盒子排序,再去执行,所以section div:nth-of-type(1)可以匹配“熊大”</p>
+    <section>
+        <p>光头强</p>
+        <div>熊大</div>
+        <div>熊二</div>
+    </section>
+</body>
+
+</html>

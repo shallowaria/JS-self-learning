@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1.::before 在元素内部的前面插入内容 -->
+    <!-- 2.::after 在元素内部的后面插入内容 -->
+    <style>
+        @font-face {
+            font-family: 'icomoon';
+            src: url('fonts/icomoon.eot?tr12b2');
+            src: url('fonts/icomoon.eot?tr12b2#iefix') format('embedded-opentype'),
+                url('fonts/icomoon.ttf?tr12b2') format('truetype'),
+                url('fonts/icomoon.woff?tr12b2') format('woff'),
+                url('fonts/icomoon.svg?tr12b2#icomoon') format('svg');
+            font-weight: normal;
+            font-style: normal;
+            font-display: block;
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: #ccc;
+        }
+
+        div::before {
+            content: '躺';
+        }
+
+        div::after {
+            content: '狗';
+        }
+
+        .tubiao {
+            position: relative;
+            width: 200px;
+            height: 35px;
+            border: 1px solid red;
+        }
+
+        .tubiao::after {
+            font-family: 'icomoon';
+            content: "\e901";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            color: red;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>特点:1.在文档树中找不到2.必须具有content属性3.属于行内元素 通过CSS创建新标签元素,而不需要HTML标签,简化HTML结构</p>
+    <div>
+        赢
+    </div>
+    <div class="tubiao">MVP！</div>
+</body>
+
+</html>

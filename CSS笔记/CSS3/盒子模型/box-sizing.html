@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 20px solid red;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .nuo {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 20px solid red;
+            padding: 15px;
+            box-sizing: content-box;
+        }
+    </style>
+</head>
+
+<body>
+    <p>box-sizing:content-box(默认,盒子大小为width+padding+border)/border-box(盒子大小为width)</p>
+    <p>前提:padding+border<=width</p>
+    <div>
+        菲伦
+    </div>
+    <p class="nuo">诺瓦尔</p>
+</body>
+
+</html>
