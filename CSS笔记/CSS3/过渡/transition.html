@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: aquamarine;
+            /* 写在div里，鼠标放上移开都有效果,即谁过渡给谁 */
+            transition: 0.3s;
+        }
+
+        div:hover {
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <p>从一种样式变换为另一种样式，常与:hover搭配</p>
+    <p>transition:属性 时间(s) 运动曲线(ease) 触发时间(s)</p>
+    <div></div>
+</body>
+
+</html>
