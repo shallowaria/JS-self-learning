@@ -1,7 +1,8 @@
 /* 把标签内外边距清除 */
 * {
     margin: 0;
-    padding: 0
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* 去除斜体 */
