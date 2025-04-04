@@ -1,3 +1,4 @@
+/* 主页 */
 .main {
     width: 980px;
     height: 455px;
@@ -42,10 +43,12 @@
     font-family: 'icomoon';
     content: '\e920';
 }
+
 .news-bd {
     padding: 5px 15px 0;
 }
-.news-bd ul li{
+
+.news-bd ul li {
     height: 24px;
     line-height: 24px;
     overflow: hidden;
@@ -53,6 +56,7 @@
     text-overflow: ellipsis;
 
 }
+
 .lifeservice {
     overflow: hidden;
     height: 209px;
@@ -63,6 +67,7 @@
 .lifeservice ul {
     width: 252px;
 }
+
 .lifeservice ul li {
     position: relative;
     float: left;
@@ -80,6 +85,7 @@
     background: url(../images/icons.png) no-repeat -19px -15px;
     margin-top: 12px;
 }
+
 .lifeservice ul li .jian {
     position: absolute;
     top: 0;
@@ -88,6 +94,122 @@
     width: 20px;
     height: 20px;
 }
+
 .bargain {
     margin-top: 5px;
+}
+
+.recom {
+    height: 163px;
+    background-color: #ebebeb;
+    margin-top: 12px;
+}
+
+.recom_hd {
+    float: left;
+    width: 205px;
+    height: 163px;
+    background-color: #5c5251;
+    text-align: center;
+    padding-top: 30px;
+}
+
+.recom_bd {
+    float: left;
+}
+
+.recom_bd ul li {
+    position: relative;
+    float: left;
+}
+
+.recom_bd ul li img {
+    width: 248px;
+    height: 163px;
+}
+
+.recom_bd ul li:nth-child(-n+3):after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10px;
+    width: 1px;
+    height: 145px;
+    background-color: #ddd;
+}
+
+.box_hd {
+    height: 30px;
+    border-bottom: 2px solid #c81623;
+}
+
+.box_hd h3 {
+    float: left;
+    font-size: 18px;
+    color: #c81623;
+    font-weight: 400;
+}
+
+.tab_list {
+    float: right;
+    line-height: 30px;
+}
+
+.box_hd .tab_list ul li {
+    float: left;
+}
+
+.box_hd .tab_list ul li a {
+    margin: 0 15px;
+}
+
+.floor .w {
+    margin-top: 30px;
+}
+
+.box_bd {
+    height: 361px;
+}
+
+.tab_list_item>div {
+    float: left;
+}
+
+.col_210 {
+    width: 210px;
+    background-color: #f9f9f9;
+    height: 361px;
+}
+
+.col_210 ul {
+    padding-left: 12px;
+    text-align: center;
+}
+.col_210 ul li {
+    float: left;
+    width: 85px;
+    height: 34px;
+    text-align: center;
+    line-height: 34px;
+    border-bottom: 1px solid #ccc;
+    margin-right: 10px;
+}
+
+.col_329 {
+    width: 329px;
+
+}
+
+.col_221 {
+    width: 221px;
+    border-right: 1px solid #ccc;
+}
+
+.col_219 {
+    width: 219px;
+}
+
+.bb {
+    display: block;
+    border-bottom: 1px solid #ccc;
 }
