@@ -40,7 +40,11 @@ a:hover {
 button,
 input {
     /* \5B8B\4F53是宋体的Unicode编码，提升兼容性 */
-    font-family: PingFang SC, Source Han Sans CN, Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif
+    font-family: PingFang SC, Source Han Sans CN, Microsoft YaHei, Heiti SC, tahoma, arial, Hiragino Sans GB, "\5B8B\4F53", sans-serif;
+    
+    border: 0;
+
+    outline: none;
 }
 
 body {
