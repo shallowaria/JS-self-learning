@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 常见移动方法有 1.定位 2.外边距 3.transform:translate */
+        /* 优点：不会影响其他盒子位置,但对行内元素无效 */
+        div {
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            /* transform:translate(x, y),也可以单独写,如下,移动距离为自己宽/高的一半 */
+            transform: translateX(50%);
+        }
+        p {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            /* 盒子居中 */
+            position:absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        div:first-child {
+            position:relative;
+            transform: translateY(50px);
+        }
+
+        div:last-child {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <p></p>
+    </div>
+    <div></div>
+</body>
+
+</html>
