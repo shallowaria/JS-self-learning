@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img {
+            /* translate:rotage(deg),以元素的中心点 */
+            transform: rotate(45deg);
+            border: 5px solid #ccc;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        img:hover {
+            transform: rotate(360deg);
+        }
+
+        /* 三角形做法： */
+        div {
+            position: relative;
+            width: 249px;
+            height: 35px;
+            border: 1px solid #000;
+        }
+
+        div::after {
+            content: "";
+            position: absolute;
+            top: 7px;
+            right: 15px;
+            width: 10px;
+            height: 10px;
+            border-right: 1px solid #000;
+            border-bottom: 1px solid #000;
+            transform: rotate(45deg);
+            transition: 0.3s;
+        }
+
+        div:hover::after{
+            /* 应该是45+180deg */
+            transform: rotate(225deg);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../../../img/200x200_Jinhsi/01.png" alt="">
+    <div></div>
+</body>
+
+</html>

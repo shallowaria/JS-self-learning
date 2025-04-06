@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            border: 1px solid aquamarine;
+            float: left;
+        }
+        div::after {
+            content: "菲伦";
+            display: block;
+            width: 200px;
+            height: 200px;
+            background-color: violet;
+            transform: rotate(180deg);
+            transform-origin: left bottom;
+            transition: 0.3s;
+        }
+        div:hover::after {
+            transform: rotate(0deg);
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

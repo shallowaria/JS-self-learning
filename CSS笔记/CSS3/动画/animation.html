@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 1.@keyframes关键帧定义动画 */
+        /* @keyframes move {
+            动画序列 
+            from {
+                transform: translateX(0);
+            }
+            to {
+                transform: translateX(1000px);
+            }
+    }*/
+        @keyframes move {
+
+            /* 总时间（此处为3s）的划分 */
+            0% {
+                transform: translate(0, 0);
+            }
+
+            25% {
+                transform: translate(1000px, 0);
+            }
+
+            50% {
+                transform: translate(1000px, 500px);
+            }
+
+            75% {
+                transform: translate(0, 500px);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            /* 2.调用动画,动画名称和持续时间 */
+            animation-name: move;
+            animation-duration: 5s;
+            /* 运动曲线，默认ease */
+            animation-timing-function: ease;
+            /* 何时开始，同过渡,默认0s */
+            animation-delay: 1s;
+            /* 循环,默认是1，有infinite */
+            animation-iteration-count: infinite;
+            /* 交替播放 */
+            animation-direction: alternate;
+            
+            /* 动画结束后状态,默认backwards */
+            /* animation-fill-mode: forwards; */
+        }
+
+        div:hover {
+            /* 是否运行，默认running，用于hover停止 */
+            animation-play-state: paused; 
+        }
+    </style>
+</head>
+
+<body>
+    <div></div>
+</body>
+
+</html>
