@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* 透视写在被观察元素的父元素 */
+            perspective: 200px;
+        }
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: aquamarine;
+            /* 3d里的xyz不能省略，没有就写0 */
+            transform: translate3d(400px, 100px, 100px);
+            margin: 100 auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- 透视=视距：人眼到屏幕的距离，近大远小 -->
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>
