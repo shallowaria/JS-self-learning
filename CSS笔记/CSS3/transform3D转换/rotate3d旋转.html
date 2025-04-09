@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            perspective: 500px;
+        }
+        img {
+            display: block;
+            margin: 100px auto;
+            transition: 1s;
+        }
+        img:hover {
+            /* 旋转方向：左手法则，即大拇指指向正方向，四个手指即为旋转方向 */
+            /* transform: rotateX(180deg);
+            transform: rotateY(180deg);
+            transform:rotateZ(180deg); */
+            /* 沿xy轴矢量对角线旋转 */
+            transform: rotate3d(1, 1, 0, 45deg);
+        }
+    </style>
+</head>
+<body>
+    <!-- 语法: transform:rotate(X/Y/Z deg) -->
+    <img src="../../../img/200x200_Jinhsi/05.png" alt="">
+</body>
+</html>
