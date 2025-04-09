@@ -27,5 +27,5 @@ filter: 函数(); 如filter: blur(5px);
 计算盒子宽度:width:calc函数
 width:calc(100%-80px)
 
-浏览器私有前缀 -moz-:firefox -ms-:ie -webkit-:safari、chrome -o-:Opera
+浏览器私有前缀 -webkit-:safari、chrome  -moz-:firefox -ms-:ie -o-:Opera
 如-webkit-border-radius: 10px; border-radius:10px
