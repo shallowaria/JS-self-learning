@@ -8,8 +8,19 @@ body {
     font-family: -apple-system, Helvetica, sans-serif;
     line-height: 1.5;
     color: #666;
-    background-color: #ccc;
-    height: 2000px;
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+input {
+    -webkit-appearance: none;
+}
+
+img,
+a {
+    -webkit-touch-callout: none;
 }
 
 ul {
@@ -19,7 +30,7 @@ ul {
 
 /* 去除图片底部空白缝隙 */
 img {
-    vertical-align: top;
+    vertical-align: middle;
 }
 
 li {
@@ -181,10 +192,12 @@ a {
 .brand div img {
     width: 100%;
 }
+
 /* nav */
 nav {
     padding-top: 5px;
 }
+
 nav a {
     float: left;
     width: 20%;
@@ -198,4 +211,27 @@ nav a img {
 
 nav a span {
     display: block;
+}
+
+/* news */
+.news {
+    margin-top: 20px;
+}
+
+.news img {
+    width: 100%;
+}
+
+.news a {
+    float: left;
+    box-sizing: border-box;
+}
+
+.news a:nth-child(1) {
+    width: 50%;
+}
+
+.news a:nth-child(n+2) {
+    width: 25%;
+    border-left: 1px solid #ccc;
 }
