@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        @media screen and (min-width: 320px) {
+            html {
+                font-size: 21.33px;
+            }
+        }
+
+        @media screen and (min-width: 750px) {
+            html {
+                font-size: 50px;
+            }
+        }
+        div {
+            /* 页面元素的rem值=页面元素值(px) / (屏幕宽度 / 划分的份数(15),即html font-size的大小) */
+            width: 2rem;
+            height: 2rem;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

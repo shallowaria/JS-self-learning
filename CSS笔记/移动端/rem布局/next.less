@@ -1,0 +1,22 @@
+.hearer {
+    width: 200px;
+    height: 200px;
+    background-color: aqua;
+    // 1.less嵌套允许子元素样式写在父元素内
+    a {
+        color: red;
+        // 2.伪类、伪元素选择器需在内层选择器前加&
+        &:hover {
+            color: blue;
+        }
+    }
+}
+
+.nav {
+    .logo {
+        color: green;
+    }
+    &::before {
+        content: '';
+    }
+}
