@@ -1,0 +1,103 @@
+// 首页样式
+// 在css中导入另外一个css文件
+@import 'common';
+
+body {
+    min-width: 320px;
+    width: 15rem;
+    margin: 0 auto;
+    line-height: 1.5; //字体的1.5倍
+    font-family: Arial, Helvetica;
+    background: #F2F2F2;
+}
+
+// search-content
+@baseFont: 50;
+@heightRem: 88 / @baseFont;
+
+.search-content {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15rem;
+    height:~"@{heightRem}rem";
+    background-color: #FFC001;
+
+    .classify {
+        width: unit((44 / @baseFont), rem);
+        height: unit((70 / @baseFont), rem);
+        margin: unit((11 / @baseFont), rem) unit((25 / @baseFont), rem) unit((7 / @baseFont), rem) unit((24 / @baseFont), rem);
+        background: url(../images/classify.png) no-repeat;
+        background-size: unit((44 / @baseFont), rem) unit((70 / @baseFont), rem);
+    }
+
+    .search {
+        flex: 1;
+
+        input {
+            outline: none;
+            border: 0;
+            height: unit((66 / @baseFont), rem);
+            border-radius: unit((33 / @baseFont), rem);
+            width: 100%;
+            margin-top: unit((12 / @baseFont), rem);
+            font-size: unit((25 / @baseFont), rem);
+            padding-left: unit((55 / @baseFont), rem);
+            color: #757575;
+        }
+    }
+
+    .login {
+        width: unit((75 / @baseFont), rem);
+        height: unit((70 / @baseFont), rem);
+        margin: unit((10 / @baseFont), rem);
+        text-align: center;
+        font-size: unit((25 / @baseFont), rem);
+        color: #fff;
+        line-height: unit((70 / @baseFont), rem);
+    }
+}
+
+// banner
+.banner {
+    width: unit((750 / @baseFont), rem);
+    height: unit((368 / @baseFont), rem);
+    img {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.ad {
+    display: flex;
+    a {
+        flex: 1;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.nav {
+    display: flex;
+    flex-wrap: wrap;
+    width: unit((750 / @baseFont), rem);
+        a {
+            flex: 20%;
+            width: unit((150 / @baseFont), rem);
+            height: unit((140 / @baseFont), rem);
+            text-align: center;
+            img {
+                display: block;
+                width: unit((82 / @baseFont), rem);
+                height: unit((82 / @baseFont), rem);
+                margin: unit((10 / @baseFont), rem) auto 0;
+            }
+            span {
+                font-size: unit((25 / @baseFont), rem);
+                color: #333;
+            }
+        }
+}
