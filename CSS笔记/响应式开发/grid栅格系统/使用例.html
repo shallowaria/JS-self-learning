@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../bootstrap-icons-1.11.3/bootstrap.min.css">
+    <style>
+        .aqua>div[class^="col"] {
+            height: 50px;
+            background-color: aquamarine;
+            margin: 10px;
+        }
+
+        .rowpy div[class^="col"] {
+            height: 50px;
+            background-color: aqua;
+        }
+
+        .rowpl div[class^="col"] {
+            height: 50px;
+            background-color: rgb(182, 28, 148);
+        }
+
+        .rowyc div {
+            height: 50px;
+            background-color: rgb(182, 115, 28);
+        }
+
+        .rowyc div:nth-child(3) {
+            background-color: rgb(62, 202, 69);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 统一将container盒子划分成12等份(列) -->
+    <!-- 写法：.container>.row>.col -->
+    <!-- 没有写 col 或 col- 的小屏类，会默认 占 100% 宽度 -->
+    <!-- <div class="container text-center">
+        <div class="row">
+            <div class="col col-sm-6 col-md-4 col-lg-3">Column</div>
+            <div class="col col-sm-6 col-md-4 col-lg-3">Column</div>
+            <div class="col col-sm-6 col-md-4 col-lg-3">Column</div>
+            <div class="col col-sm-6 col-md-4 col-lg-3">Column</div>
+        </div>
+    </div> -->
+
+    <!-- row的写法 -->
+    <div class="container text-center">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+            <div class="col">Column</div>
+            <div class="col">Column</div>
+            <div class="col">Column</div>
+            <div class="col">Column</div>
+        </div>
+    </div>
+    <!-- 列嵌套 -->
+    <div class="container">
+        <div class="row aqua">
+            <div class="col">
+                <!-- 列嵌套加一个行去掉父元素padding值 -->
+                <div class="row">
+                    <div class="col-md-4">嵌套1</div>
+                    <div class="col-md-8">嵌套2</div>
+                </div>
+            </div>
+            <div class="col">2</div>
+            <div class="col">3</div>
+        </div>
+    </div>
+    <!-- 列偏移 -->
+    <div class="container">
+        <div class="row rowpy">
+            <div class="col-md-4">左侧</div>
+            <div class="col-md-4 offset-md-4">右侧</div>
+            <div class="row">
+                <div class="col-md-8 offset-md-2">中间盒子</div>
+            </div>
+        </div>
+    </div>
+    <!-- 列排序 -->
+    <div class="container">
+        <div class="row rowpl">
+            <div class="col-md-4 order-md-2">左侧</div>
+            <div class="col-md-8 order-md-1">右侧</div>
+        </div>
+    </div>
+    <!-- 响应式工具（隐藏） -->
+    <div class="container">
+        <div class="row rowyc">
+            <div class="col-3">1</div>
+            <div class="col-3">2</div>
+            <div class="col-3 d-none d-md-block">消散吧！</div>
+            <div class="col-3">4</div>
+        </div>
+    </div>
+</body>
+
+</html>
