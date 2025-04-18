@@ -3,10 +3,15 @@ body {
   max-width: 750px;
   margin: 0 auto;
   height: 1200px;
+  background-color: #F2F4F7;
 }
 a {
   text-decoration: none;
   color: #707070;
+}
+.warp {
+  background-color: #fff;
+  padding-bottom: 1.1467rem;
 }
 .header {
   height: 2.1333rem;
@@ -42,4 +47,68 @@ a {
 }
 .go img {
   width: 100%;
+}
+.content {
+  padding: 1.0667rem 0.64rem;
+  background-color: #fff;
+  margin-top: 0.2667rem;
+}
+.content .con-hd {
+  height: 1.0133333rem;
+  line-height: 1.0133rem;
+  display: flex;
+  justify-content: space-between;
+}
+.content .con-hd h4 {
+  margin: 0;
+  display: flex;
+  position: relative;
+}
+.content .con-hd h4 .icon {
+  display: inline-block;
+  width: 1.0133rem;
+  height: 1.0133rem;
+  vertical-align: middle;
+}
+.content .con-hd h4 i {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  font-size: 0.7467rem;
+  color: #333;
+  margin-left: 2.3333rem;
+  width: 3.3333rem;
+  font-style: normal;
+}
+.content .con-hd .more {
+  font-size: 0.5867rem;
+  color: #999;
+}
+.get_job_focus .swiper-container {
+  width: 100%;
+  height: 100%;
+}
+.get_job_focus .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  /* Center slide text vertically */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  transition: 300ms;
+  transform: scale(0.8);
+}
+.get_job_focus .swiper-slide-active,
+.get_job_focus .swiper-slide-duplicate-active {
+  transform: scale(1);
 }
