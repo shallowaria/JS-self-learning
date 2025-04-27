@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Variables</title>
+</head>
+<body>
+  <script>
+    // 变量名限制：1.不能用保留词；2.不能以数字开头；3.不能用特殊字符$_等
+    // ; 等于。号，表示一句话的结束
+    let variable1 = 3;
+    // 此处的variable1不会输出下面更新的5
+    console.log(variable1);
+
+    const calculation = 2 + 2;
+    console.log(calculation);
+    console.log(calculation + 2);
+
+
+    const result = calculation + 2;
+    console.log(result);
+
+    const message = 'hello';
+    console.log(message); console.log(';')
+    // 不能let同一个已存在的变量
+    variable1 = 5;
+    console.log(variable1);
+
+    variable1 = variable1 + 1;
+    variable1 += 1;
+    console.log(variable1);
+    // const与let相同，只是值不能改变
+    const variable2 = 3;
+    // var范围不好界定，新代码不使用
+    var variable3 = 3;
+
+    console.log(typeof variable2);
+    console.log(typeof message);
+  </script>
+</body>
+</html>
