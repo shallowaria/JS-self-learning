@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    /*
+    // create function,not doing anything else
+    function function1() {
+        console.log('hello');
+        console.log(2 + 2);
+    }
+    // calling/running/execution the function
+    function1();
+    function1();
+    */
+
+    // Return从函数中获取值;Parameter/argument(参数)将值放入函数中
+    // taxPercent取默认值
+    function calculateTax(cost, taxPercent = 0.1) {
+        // 没传参就是undefined
+        console.log(cost * taxPercent);
+    }
+    // 传递
+    calculateTax(2000, 0.2);
+    calculateTax(5000);
+</script>
+
+</html>
