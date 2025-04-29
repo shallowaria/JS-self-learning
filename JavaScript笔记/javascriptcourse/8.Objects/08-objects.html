@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objects</title>
+</head>
+<body>
+    
+</body>
+<script>
+    //Objects group & use multiple value
+
+    // const 声明的变量绑定（binding）不能被重新赋值。
+    // 但如果这个变量绑定的是一个对象或数组，对象的内容（属性）或数组的元素是可以被修改的。
+    /*
+    const product = {
+        name: 'socks',
+        price: 1090
+    };
+
+    console.log(typeof product);
+    console.log(product.name);
+    console.log(product.price);
+
+    product.name = 'cotton socks';
+
+    product.newProperty = true;
+    console.log(product);
+    
+    delete product.newProperty;
+    console.log(product);
+    */
+
+    const product2 = {
+        name: 'shirt',
+        // 必须用方括号+string表示
+        ['delivery-time']: '1 day'
+    };
+    console.log(product2);
+    console.log(product2.name);
+    // 同上
+    console.log(product2['name']);
+    // 用途:防止js识别破折号为减号，记得用字符串表示
+    console.log(product2['delivery-time']);
+</script>
+</html>
