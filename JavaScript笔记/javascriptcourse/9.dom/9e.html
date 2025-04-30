@@ -77,8 +77,7 @@ updateCalculation(' . ')
         // it can potentially be given harmful code to run.
         // Only use eval() for learning purposes.
     calculation = eval(calculation);
-    displayCalculation();
-    localStorage.setItem('calculation', calculation);
+    saveCalculation();
     ">=</button>
 
         <button onclick="
@@ -89,8 +88,7 @@ updateCalculation(' . ')
     <p>
         <button onclick="
         calculation = '';
-        displayCalculation();
-        localStorage.setItem('calculation', calculation);
+        saveCalculation();
         ">
             Clear
         </button>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .amazon-cart-button {
+            background-color: rgb(255, 216, 20);
+            width: 100px;
+            height: 30px;
+            line-height: 30px;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+        }
+
+        .commonality {
+            height: 40px;
+            line-height: 40px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .black {
+            background-color: black;
+            color: #fff;
+        }
+
+        .white {
+            background-color: rgb(230, 230, 230);
+            color: black;
+        }
+
+        .switch {
+            width: 100px;
+            height: 50px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin: 0 20px;
+        }
+
+        .is-toggled {
+            background-color: gray;
+            color: black;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="amazon-cart-button">Add to Cart</button>
+    <button class="commonality black">Request now</button>
+    <button class="commonality white">Schedule for later</button>
+
+    <button class="js-button">Test</button>
+
+    <button class="js-switch switch" onclick="toggleButton(this, 'Gaming')">Gaming</button>
+    <button class="js-swtich switch" onclick="toggleButton(this, 'Music')">Music</button>
+    <button class="js-switch switch" onclick="toggleButton(this, 'Tech')">Tech</button>
+    <script>
+        console.log(document.querySelector('.js-button').classList.contains('js-button'));
+
+        function toggleButton(button, originalText) {
+            if (button.innerHTML === originalText) {
+                button.classList.add('is-toggled');
+                button.innerHTML = 'Started';
+            } else if (button.innerHTML === 'Started') {
+                button.classList.remove('is-toggled');
+                button.innerHTML = originalText;
+            }
+        }
+    </script>
+</body>
+
+</html>
