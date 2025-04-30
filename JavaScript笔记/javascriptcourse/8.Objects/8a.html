@@ -9,6 +9,45 @@
     
 </body>
 <script>
-    
+    const product = {
+        name: 'basketball',
+        price: 2095
+    };
+    console.log(product);
+
+    product.price += 500;
+    console.log(product);
+
+    product['delivery-time'] = '3 days';
+    console.log(product);
+
+    const product2 = {
+        name: 'socks',
+        price: 1090
+    };
+
+    function comparePrice(product1, product2) {
+        if (product1.price > product2.price) {
+            return product1;
+        } else if(product1.price < product2.price) {
+            return product2;
+        }
+    }
+
+    console.log(comparePrice(product, product2));
+
+    function isSameProduct(product1, product2) {
+        if (product1.name === product2.name && product1.price === product2.price) {
+            return true;
+        } else {
+            return false;
+        }
+    };
+
+    console.log(isSameProduct(product, product2));
+
+    const low = 'Good Morning';
+    console.log(low.toLowerCase());
+    console.log(low.repeat(3));
 </script>
 </html>
