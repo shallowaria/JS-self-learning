@@ -30,12 +30,20 @@
     
     delete product.newProperty;
     console.log(product);
-    */
+    
 
     const product2 = {
         name: 'shirt',
-        // 必须用方括号+string表示
-        ['delivery-time']: '1 day'
+        // 用方括号(可选)+string表示
+        'delivery-time': '1 day',
+        rating: {
+            stars: 4.5,
+            count: 87
+        },
+        // 1.函数也是一种值,可以存放，这种用法叫方法，即object+function=method
+        fun: function function1() {
+            console.log('function inside object');
+        }
     };
     console.log(product2);
     console.log(product2.name);
@@ -43,5 +51,64 @@
     console.log(product2['name']);
     // 用途:防止js识别破折号为减号，记得用字符串表示
     console.log(product2['delivery-time']);
+
+    console.log(product2.rating.count);
+    product2.fun();
+    // 2.可以证明log是储存在console这个对象中的函数
+    console.log(typeof console.log);
+    // JSON与JavaScript Object的区别：1.用双引号表示属性和值 2.不支持函数 3.返回的是字符串
+    console.log(JSON.stringify(product2));
+    
+    // 还原为JavaScript Object
+    const jsonString = JSON.stringify(product2);
+    console.log(JSON.parse(jsonString));
+    */
+
+    // 属性是键值对，方法是函数，JS会Auto boxing 这些字符串到一个特殊对象中，除了null和undefined
+    console.log('hello'.length);
+    console.log('hello'.toUpperCase());
+
+    const object1 = {
+        message: 'hello',
+    };
+    // 复制的是reference，不是object
+    const object2 = object1;
+
+    object1.message = 'Good job!';
+    console.log(object1);
+    // 改1的值2也会改，因为复制的是referen
+    console.log(object2);
+
+    const object3 = {
+        message: 'Good job!',
+    };
+    // 不同的referen，不会返回true
+    console.log(object3 === object1);
+    console.log(object2 === object1);
+
+    const object4 = {
+        message: 'Good job!',
+        price: 799
+    };
+    //↓shortcut const message = object4.message;
+    const { message, price } = object4;
+    console.log(message);
+    console.log(price);
+
+    const object5 = {
+        //↓Shorthand Message message: message,
+        message,
+
+        // ↓Shorthand Method method: function function1() {
+        //    console.log('method');
+        //},
+        method () {
+            console.log('method');
+        }
+    };
+
+    console.log(object5);
+    object5.method();
+
 </script>
 </html>
