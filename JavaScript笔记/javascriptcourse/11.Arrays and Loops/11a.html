@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
+        /*
         let nums = [10, 20, 30];
         nums[2] = 99;
         console.log(nums);
@@ -28,6 +31,48 @@
 
         arraySwap([1,20,22,24,5]);
         arraySwap(['hi', 'hello', 'good']);
+        
+
+        for (let i = 0; i <= 10; i++) {
+            if (i % 2 === 0) {
+                console.log(i);
+            }
+        }
+
+        for (let i = 5; i >= 0; i--) {
+            console.log(i);
+        }
+
+        let d11 = 0;
+        while (d11 <= 10) {
+            if (d11 % 2 === 0) {
+                console.log(d11);
+            }
+            d11++;
+        }
+
+        let d12 = 5;
+        while (d12 >= 0) {
+            console.log(d12);
+            d12--;
+        }
+
+        const result = [];
+        for (let i = 0; i < [1, 2, 3].length; i++) {
+            result.push([1, 2, 3][i] + 1);
+        }
+
+        console.log(result);
+        */
+
+        function addOne(array) {
+            const result = []
+            for (let i = 0; i < array.length; i++) {
+                result.push(array[i] + 1);
+            }
+            console.log(result);
+        }
     </script>
 </body>
+
 </html>
