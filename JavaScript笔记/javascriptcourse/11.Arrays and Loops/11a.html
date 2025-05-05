@@ -63,7 +63,7 @@
         }
 
         console.log(result);
-        */
+        
 
         function addOne(array) {
             const result = []
@@ -72,6 +72,53 @@
             }
             console.log(result);
         }
+        
+        function addNum(array, num) {
+            const result = [];
+            for (let i = 0; i < array.length; i++) {
+                result.push(array[i]+num);
+            }
+            console.log(result);
+        }
+        addNum([1,2,3],2);
+        
+        function addArrays(array1, array2) {
+            const result = [];
+            for (let i = 0; i < array1.length; i++) {
+                result.push(array1[i] + array2[i]);
+            }
+            console.log(result);
+        }
+        addArrays([1,1,2],[1,1,3]);
+        
+
+        function countPositive(nums) {
+            let result = 0;
+
+            for (let i = 0; i < nums.length; i++) {
+                if (nums[i] > 0) {
+                    result++;
+                }
+            }
+
+            return result;
+        }
+        console.log(countPositive([1, -2, 3, 0, 5]));
+        console.log(countPositive([1, -3, 5]));
+        */
+        function countPositive(nums) {
+            let result = 0;
+
+            for (let i = 0; i < nums.length; i++) {
+                if (nums[i] > 0) {
+                    result++;
+                }
+            }
+
+            console.log(result);
+        }
+
+        countPositive([1, -3, 5]);
     </script>
 </body>
 
