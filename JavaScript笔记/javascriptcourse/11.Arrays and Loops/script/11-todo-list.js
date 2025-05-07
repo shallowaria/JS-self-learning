@@ -1,4 +1,4 @@
-const todoList = [{
+const todoList = JSON.parse(localStorage.getItem('todoList')) || [{
     name: 'make dinner',
     dueDate: '2022-12-22'
 },
@@ -53,4 +53,18 @@ function addTodo() {
     inputElement.value = '';
 
     renderTodoList();
+    saveToStorage();
 }
+
+function saveToStorage() {
+    localStorage.setItem('todoList', JSON.stringify(todoList));
+}
+
+// 获取今天的日期
+const today = new Date();
+
+// 格式化为 yyyy-mm-dd（input[type="date"] 接受这种格式）
+const formattedDate = today.toISOString().split('T')[0];
+
+// 设置 input 元素的默认值
+document.querySelector('.js-due-date-input').value = formattedDate;
