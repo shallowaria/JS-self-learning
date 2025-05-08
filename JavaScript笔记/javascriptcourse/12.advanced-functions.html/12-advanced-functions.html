@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced functions</title>
+</head>
+
+<body>
+    <script>
+        /*var greeting = function() {
+            console.log('hello');
+        };  ↓简写,且有变量提升，可以先调用后写功能
+        function greeting() {
+            console.log('hello');
+        }
+        greeting();
+
+        const num = 2;
+        // 函数也可保存在变量中,此处是匿名函数
+        const function1 = function() {
+            console.log('hello2');
+        };
+
+        console.log(function1);
+        console.log(typeof function1);
+        function1();
+
+        const object1 = {
+            num: 2,
+            fun: function() {
+                console.log('hello3');
+            }
+        };
+        // 调用函数记得加()
+        object1.fun();
+
+        // 值也可以传给参数
+        function display(param) {
+            console.log(param);
+        }
+        display(2);
+        // function = values
+        function run(param) {
+            param();
+        }
+        run(function() {
+            console.log('hello4');
+        });
+        
+        
+        // 异步代码,不会阻塞运行
+        setTimeout(function() {
+            console.log('timeout');
+            console.log('timeout2');
+        }, 3000);
+
+        console.log('next line');
+
+        //每3000ms运行一次
+        setInterval(function() {
+            console.log('interval');
+        }, 3000);
+
+        console.log('next line2');
+        */
+
+        // forEach循环每一个string并保存在value中运行
+        [
+            'make dinner',
+            'wash dishes',
+            'watch youtube'
+        ].forEach(function (value, index) {
+            if (value === 'wash dishes') {
+                // forEach中return和for循环中的continue一样
+                return;
+            }
+
+            console.log(index);
+            console.log(value);
+        });
+    </script>
+</body>
+
+</html>
