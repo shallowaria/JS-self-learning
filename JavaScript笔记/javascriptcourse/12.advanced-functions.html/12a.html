@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12a</title>
+</head>
+
+<body>
+    <button onclick="changeButton()" class="js-button">Start!</button>
+    <button onclick="addCart()" class="js-cart">Add to cart</button>
+    <script>
+        /*
+        const add = function() {
+            console.log(2 + 3);
+        }
+        add();
+        add();
+
+        function runTwice(fun) {
+            fun();
+            fun();
+        }
+
+        runTwice(add);
+
+        runTwice(function() {
+            console.log('12b');
+        });
+        */
+
+        function changeButton() {
+            const button = document.querySelector('.js-button');
+            button.innerHTML = 'Loading...';
+            setTimeout(function () {
+                button.innerHTML = 'Finished!';
+            }, 1000);
+        }
+
+        function addCart() {
+            const button = document.querySelector('.js-cart');
+            button.textContent = 'Added';
+            setTimeout(() => {
+                button.innerHTML = '';
+            }, 2000);
+        }
+    </script>
+</body>
+
+</html>

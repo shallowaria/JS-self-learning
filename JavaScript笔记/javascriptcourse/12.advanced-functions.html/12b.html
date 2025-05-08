@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App</title>
+</head>
+<body>
+    <button onclick="addCart()" class="js-cart">Add to cart</button>
+    <button onclick="messages++;">Add</button>
+    <button onclick="messages = Math.max(0, messages - 1);">Remove</button>
+    <script>
+        let timeoutId;
+
+        function addCart() {
+            const cart = document.querySelector('.js-cart');
+            cart.innerHTML = 'Added';
+            
+            clearTimeout(timeoutId);
+
+            timeoutId = setTimeout(() => {
+                cart.innerHTML = '';
+            }, 2000);
+        }
+
+        let messages = 2;
+        let showNew = false;
+        
+        setInterval(function() {
+            if (messages === 0) {
+                document.title = 'App';
+                return;
+            }
+
+            if (showNew) {
+                document.title = `(${messages}) New messages`;
+            } else {
+                document.title = 'App';
+            }
+
+            showNew = !showNew;
+        }, 1000);
+    </script>
+</body>
+</html>
