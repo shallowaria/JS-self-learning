@@ -45,9 +45,14 @@ function pickComputerMove() {
 // 自动游玩与停止
 let isAutoPlaying = false;
 let intervalId;
+
+//const autoPlay = () => {
+
+//};
+// 命名函数用传统，更易阅读且有变量提升
 function autoPlay() {
     if (!isAutoPlaying) {
-        intervalId = setInterval(function () {
+        intervalId = setInterval(() => {
             const playerMove = pickComputerMove();
             playGame(playerMove);
         }, 1000);
@@ -57,6 +62,31 @@ function autoPlay() {
         isAutoPlaying = false;
     }
 }
+
+//不能直接写playGame('rock'),否则会立即执行，直接返回结果,而此处要求的是一个函数，需要等用户点击按钮时才执行
+//不需要参数可以直接传函数名而不用箭头函数
+document.querySelector('.js-rock-button').addEventListener('click', () => {
+    playGame('rock');
+});
+
+document.querySelector('.js-paper-button').addEventListener('click', () => {
+    playGame('paper');
+});
+
+document.querySelector('.js-scissors-button').addEventListener('click', () => {
+    playGame('scissors');
+});
+
+// 按下键盘时会保存事件到箭头函数的event并运行函数
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+        playGame('rock');
+    } else if (event.key === 'p') {
+        playGame('paper');
+    } else if (event.key === 's') {
+        playGame('scissors');
+    }
+});
 
 function playGame(playerMove) {
     // return到这里的pickComputerMove中再赋值到此处的computerMove
