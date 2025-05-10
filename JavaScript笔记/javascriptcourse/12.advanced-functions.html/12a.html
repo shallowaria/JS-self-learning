@@ -8,8 +8,8 @@
 </head>
 
 <body>
-    <button onclick="changeButton()" class="js-button">Start!</button>
-    <button onclick="addCart()" class="js-cart">Add to cart</button>
+    <button class="js-button">Start!</button>
+    <button class="js-cart">Add to cart</button>
     <script>
         /*
         const add = function() {
@@ -30,10 +30,16 @@
         });
         */
 
+        document.querySelector('.js-button').addEventListener('click', () => {changeButton();});
+
+        document.querySelector('.js-cart').addEventListener('click', () => {
+            addCart();
+        });
+
         function changeButton() {
             const button = document.querySelector('.js-button');
             button.innerHTML = 'Loading...';
-            setTimeout(function () {
+            setTimeout(() => {
                 button.innerHTML = 'Finished!';
             }, 1000);
         }

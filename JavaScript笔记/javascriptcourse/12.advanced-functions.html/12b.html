@@ -8,11 +8,18 @@
 </head>
 
 <body>
-    <button onclick="addCart()" class="js-cart">Add to cart</button>
-    <button onclick="messages++;">Add</button>
-    <button onclick="messages = Math.max(0, messages - 1);">Remove</button>
+    <button class="js-cart">Add to cart</button>
+    <button class="js-add">Add</button>
+    <button class="js-remove">Remove</button>
     <script>
         let timeoutId;
+
+        document.querySelector('.js-cart').addEventListener('click', () => {
+            addCart();
+        });
+
+        document.querySelector('.js-add').addEventListener('click', () => messages++);
+        document.querySelector('.js-remove').addEventListener('click', () => messages = Math.max(0, messages - 1));
 
         function addCart() {
             const cart = document.querySelector('.js-cart');
@@ -27,7 +34,7 @@
 
         let messages = 2;
 
-        setInterval(function () {
+        setInterval(() => {
             if (messages === 0) {
                 document.title = 'App';
                 return;
