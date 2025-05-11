@@ -1,4 +1,4 @@
-const products = [
+/*const products = [
     //数据结构
     {
         image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
@@ -24,7 +24,16 @@ const products = [
             count: 56
         },
         priceCents: 799
+    }, {
+        image: 'images/products/black-2-slot-toaster.jpg',
+        name: '2 Slot Toaster - Black',
+        rating: {
+            stars: 5,
+            count: 2197
+        },
+        priceCents: 1899
     }];
+    */
 //2.combine HTML together
 let productsHTML = '';
 //1.generate the HTML
