@@ -37,8 +37,9 @@
 //2.combine HTML together
 
 //module只能在live server中生效
-import {cart} from '../data/cart.js';
-import {products} from '../data/products.js';
+import { cart, addToCart } from '../data/cart.js';
+//import * as cartModule from '../data/cart.js'; 另一种写法,导入时用cartModule.cart及cartModule.addToCart('id');
+import { products } from '../data/products.js';
 
 let productsHTML = '';
 //1.generate the HTML
@@ -95,36 +96,24 @@ products.forEach((product) => {
     `;
 });
 
+function updateCartQuantity() {
+    let cartQuantity = 0;
+
+    cart.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
+    });
+
+    document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+
+}
+
 //3.put html in the page
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
 
 document.querySelectorAll('.js-add-to-cart').forEach((button) => {
     button.addEventListener('click', () => {
         const productId = button.dataset.productId;
-
-        let matchingItem;
-
-        cart.forEach((item) => {
-            if (productId === item.productId) {
-                matchingItem = item;
-            }
-        });
-
-        if (matchingItem) {
-            matchingItem.quantity += 1;
-        } else {
-            cart.push({
-                productId,
-                quantity: 1
-            });
-        }
-
-        let cartQuantity = 0;
-
-        cart.forEach((item) => {
-            cartQuantity += item.quantity;
-        });
-
-        document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+        addToCart(productId);
+        updateCartQuantity();
     });
 });
