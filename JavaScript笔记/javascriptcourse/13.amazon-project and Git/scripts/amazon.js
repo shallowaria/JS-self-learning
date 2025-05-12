@@ -36,7 +36,9 @@
     */
 //2.combine HTML together
 
+//module只能在live server中生效
 import {cart} from '../data/cart.js';
+import {products} from '../data/products.js';
 
 let productsHTML = '';
 //1.generate the HTML
