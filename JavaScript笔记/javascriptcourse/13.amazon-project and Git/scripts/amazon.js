@@ -35,6 +35,9 @@
     }];
     */
 //2.combine HTML together
+
+import {cart} from '../data/cart.js';
+
 let productsHTML = '';
 //1.generate the HTML
 products.forEach((product) => {
