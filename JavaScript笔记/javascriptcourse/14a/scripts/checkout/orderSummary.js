@@ -1,11 +1,11 @@
 import { cart, removeFromCart, calculateCartQuantity, updateQuantity, updateDeliveryOption } from '../../data/cart.js';
 import { products, getProduct } from '../../data/products.js';
 import { formatCurrency } from '../utils/money.js';
-import { hello } from 'https://unpkg.com/supersimpledev@1.0.1/hello.esm.js';
 // Default Export
 import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
-import { deliveryOptions, getDeliveryOption } from '../../data/deliveryOptions.js'
+import { deliveryOptions, getDeliveryOption, calculateDeliveryDate } from '../../data/deliveryOptions.js'
 import { renderPaymentSummary } from './paymentSummary.js';
+import { renderCheckoutHeader } from './checkoutHeader.js';
 
 
 export function renderOrderSummary() {
@@ -21,9 +21,7 @@ export function renderOrderSummary() {
 
     const deliveryOption = getDeliveryOption(deliveryOptionId);
 
-    const today = dayjs();
-    const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
-    const dateString = deliveryDate.format('dddd, MMMM, D');
+    const dateString = calculateDeliveryDate(deliveryOption);
 
     cartSummaryHTML += `
       <div class="cart-item-container
@@ -47,11 +45,15 @@ export function renderOrderSummary() {
               <span>
                 Quantity: <span class="quantity-label js-quantity-label-${matchingProduct.id}">${cartItem.quantity}</span>
               </span>
-              <span class="update-quantity-link link-primary js-update-link" data-product-id="${matchingProduct.id}">
+              <span class="update-quantity-link link-primary js-update-link"
+                data-product-id="${matchingProduct.id}">
                 Update
               </span>
               <input class="quantity-input js-quantity-input-${matchingProduct.id}">
-              <span class="save-quantity-link link-primary js-save-link data-product-id="${matchingProduct.id}">Save</span>
+              <span class="save-quantity-link link-primary js-save-link"
+                data-product-id="${matchingProduct.id}">
+                Save
+              </span>
               <span class="delete-quantity-link link-primary js-delete-link" data-product-id="${matchingProduct.id}">
                 Delete
               </span>
@@ -72,9 +74,7 @@ export function renderOrderSummary() {
   function deliveryOptionsHTML(matchingProduct, cartItem) {
     let html = '';
     deliveryOptions.forEach((deliveryOption) => {
-      const today = dayjs();
-      const deliveryDate = today.add(deliveryOption.deliveryDays, 'days');
-      const dateString = deliveryDate.format('dddd, MMMM, D');
+      const dateString = calculateDeliveryDate(deliveryOption);
       const priceString = deliveryOption.priceCents === 0 ? 'FREE' : `$${formatCurrency(deliveryOption.priceCents)} -`;
 
       const isChecked = deliveryOption.id === cartItem.deliveryOptionId;
@@ -109,54 +109,57 @@ export function renderOrderSummary() {
         const productId = link.dataset.productId;
         removeFromCart(productId);
 
+        renderCheckoutHeader();
         renderOrderSummary();
         renderPaymentSummary();
 
         updateCartQuantity();
       });
     });
+  // This code was copied from the solutions of exercises 14f - 14n.
+  document.querySelectorAll('.js-update-link')
+    .forEach((link) => {
+      link.addEventListener('click', () => {
+        const productId = link.dataset.productId;
 
-  updateCartQuantity();
-
-  function updateCartQuantity() {
-
-    const cartQuantity = calculateCartQuantity();
-
-    document.querySelector('.js-return-to-home-link').innerHTML = `${cartQuantity} items`;
-  }
-
-  document.querySelectorAll('.js-update-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      const { productId } = link.dataset;
-
-      const container = document.querySelector(`.js-cart-item-container-${productId}`);
-      container.classList.add('is-editing-quantity');
+        const container = document.querySelector(
+          `.js-cart-item-container-${productId}`
+        );
+        container.classList.add('is-editing-quantity');
+      });
     });
-  });
 
-  document.querySelectorAll('.js-save-link').forEach((link) => {
-    link.addEventListener('click', () => {
-      const { productId } = link.dataset;
-      const container = document.querySelector(`.js-cart-item-container-${productId}`);
-      container.classList.remove('is-editing-quantity');
+  document.querySelectorAll('.js-save-link')
+    .forEach((link) => {
+      link.addEventListener('click', () => {
+        const productId = link.dataset.productId;
 
-      const quantityInput = document.querySelector(`.js-quantity-input-${productId}`);
-      const newQuantity = Number(quantityInput.value);
-      updateCartQuantity(productId, newQuantity);
+        const container = document.querySelector(
+          `.js-cart-item-container-${productId}`
+        );
+        container.classList.remove('is-editing-quantity');
 
-      const quantityLabel = document.querySelector(`.js-quantity-label-${productId}`);
-      quantityLabel.innerHTML = newQuantity;
+        const quantityInput = document.querySelector(
+          `.js-quantity-input-${productId}`
+        );
+        const newQuantity = Number(quantityInput.value);
+        updateQuantity(productId, newQuantity);
 
-      updateCartQuantity();
+        renderCheckoutHeader();
+        renderOrderSummary();
+        renderPaymentSummary();
+
+        // We can delete the code below (from the original solution)
+        // because instead of using the DOM to update the page directly
+        // we can use MVC and re-render everything. This will make sure
+        // the page always matches the data.
+
+        // const quantityLabel = document.querySelector(
+        //   `.js-quantity-label-${productId}`
+        // );
+        // quantityLabel.innerHTML = newQuantity;
+
+        // updateCartQuantity();
+      });
     });
-  });
-
-  document.querySelectorAll('.js-delivery-option').forEach((element) => {
-    element.addEventListener('click', () => {
-      const { productId, deliveryOptionId } = element.dataset;
-      updateDeliveryOption(productId, deliveryOptionId);
-      renderOrderSummary();
-      renderPaymentSummary();
-    });
-  });
 }
