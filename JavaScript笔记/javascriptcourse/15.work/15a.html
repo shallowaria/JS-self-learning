@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script type="module">
+        import dayjs from 'https://unpkg.com/supersimpledev@8.5.0/dayjs/esm/index.js';
+        import isSatSun from './15a.js';
+        /*
+        const today1 = dayjs();
+        const date = today1.add(5, 'days');
+        console.log(date.format('MMMM D'));
+        const today2 = dayjs();
+        const month = today2.add(1, 'month');
+        console.log(month.format('MMMM D'));
+        const today3 = dayjs();
+        const ago = today3.subtract(1, 'month');
+        console.log(ago.format('MMMM D'));
+        console.log(ago.format('dddd'));
+        */
+        
+
+        let date = dayjs();
+        console.log(date.format('MMMM D'));
+        console.log(isSatSun(date));
+
+        date = dayjs().add(2, 'day');
+        console.log(date.format('dddd, MMMM D'));
+        console.log(isSatSun(date));
+
+        date = dayjs().add(1, 'day');
+        console.log(date.format('dddd, MMMM D'));
+        console.log(isSatSun(date));
+
+        date = dayjs().add(6, 'day');
+        console.log(date.format('dddd, MMMM D'));
+        console.log(isSatSun(date));
+    </script>
+</body>
+
+</html>
