@@ -4,7 +4,7 @@ function Cart(localStorageKey) {
 
     loadFromStorage() {
         //this 指向外部对象，即此处的cart
-    this.cartItems = JSON.parse(localStorage.getItem('localStorageKey'));
+    this.cartItems = JSON.parse(localStorage.getItem(localStorageKey));
 
     if (!this.cartItems) {
         this.cartItems = [{
