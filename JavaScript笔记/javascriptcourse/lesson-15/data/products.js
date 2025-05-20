@@ -55,6 +55,12 @@ class Clothing extends Product {
     `;
   }
 }
+/*
+const date = new Date();
+console.log(date);
+console.log(date.toLocaleTimeString());
+*/
+
 
 export const products = [
   {
@@ -721,3 +727,29 @@ export const products = [
   }
   return new Product(productDetails);
 });
+
+//1.对象内部用this指向外部对象
+
+//2.对象外没有指向，是当前环境，this = undefined
+console.log(this);
+/*
+const object2 = {
+  a: 2,
+  b: this.a
+};*/
+//3. 用.call函数调用this
+function logThis(param1, param2) {
+  console.log(this);
+  console.log(param1, param2)
+}
+logThis();
+logThis.call('hello', 'hi', 'nihao');
+
+//4.箭头函数中this与在箭头外的this值一致
+this
+const object3 = {
+  method: () => {
+    console.log(this);
+  }
+};
+object3.method();
