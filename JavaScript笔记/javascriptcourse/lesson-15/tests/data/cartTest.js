@@ -48,21 +48,4 @@ describe('test suite: addToCart', () => {
         expect(cart[0].productId).toEqual('e43638ce-6aa0-4b85-b27f-e1d07eb678c6');
         expect(cart[0].quantity).toEqual(1);
     });
-
-    describe('test suite: removeFromCart', () => {
-        beforeEach(() => {
-            spyOn(localStorage, 'setItem');
-        });
-
-        it('removes a product from the cart', () => {
-            spyOn(localStorage, 'getItem', () => {
-                return JSON.stringify([{
-                    productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
-                    quantity: 1,
-                    deliveryOptionId: '1'
-                }]);
-            });
-            localStorage();
-        });
-    });
 });
