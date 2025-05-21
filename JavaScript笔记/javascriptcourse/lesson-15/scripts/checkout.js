@@ -8,14 +8,21 @@ import { loadCart } from '../data/cart.js';
 
 //async = return a promise,只接受promise不接受callback
 async function loadPage() {
-    //await = .then(() => {});只能在async中使用
-    await loadProductsFetch();
+    try {
+        // throw 'error1';
+        await loadProductsFetch();
 
-    const value = await new Promise((resolve) => {
-        loadCart(() => {
-            resolve('value3');
+        const value = await new Promise((resolve, reject) => {
+            // throw 'error2';
+            loadCart(() => {
+                //reject('error3');
+                resolve('value3');
+            });
         });
-    })
+    } catch(error) {
+        console.log('Unexpected error. Please try again later.');
+    }
+    //await = .then(() => {});只能在async中使用
 
     renderOrderSummary();
     renderPaymentSummary();
