@@ -7,29 +7,36 @@
     <title>Document</title>
     <style>
         .request-button {
-            width: 100px;
-            height: 50px;
+            padding: 12px 15px;
             background-color: #000000;
             color: #f3f3f3;
             border: none;
             cursor: pointer;
             font-weight: bold;
+            transition: opacity 0.15s;
+        }
+
+        .request-button:hover {
+            opacity: 0.8;
         }
 
         .cart-button {
-            width: 150px;
-            height: 30px;
+            padding: 12px 40px;
             border-radius: 30px;
             background-color: #f9d94c;
             border: none;
             color: #191913;
             cursor: pointer;
             font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cart-button:hover {
+            background-color: red;
         }
 
         .sign-button {
-            width: 100px;
-            height: 50px;
+            padding: 12px 30px;
             border: none;
             border-radius: 10px;
             background-color: rgb(46, 164, 79);
@@ -38,9 +45,12 @@
             font-weight: bold;
         }
 
+        .sign-button:hover {
+            box-shadow: 0 5px 8px rgba(0, 0, 0, 0.15);
+        }
+
         .get-started-button {
-            width: 100px;
-            height: 50px;
+            padding: 12px 30px;
             border: none;
             color: #fff;
             background-color: rgb(121, 82, 179);
@@ -48,33 +58,39 @@
             border-radius: 4px;
             margin-right: 6px;
             cursor: pointer;
+            transition: background-color 0.3s, color 1s;
         }
 
         .download-button {
-            width: 100px;
-            height: 40px;
+            padding: 12px 30px;
             font-weight: 700;
             border-radius: 4px;
             color: #6e757c;
             border: 1px solid black;
             cursor: pointer;
             background-color: #fff;
+            transition: background-color 0.3s, color 0.15s;
+        }
+
+        .get-started-button:hover,
+        .download-button:hover {
+            background-color: aquamarine;
+            color: rgb(155, 155, 155);
         }
 
         .apply-button {
-            width: 200px;
-            height: 30px;
+            padding: 12px 15px;
             font-weight: 700;
             color: #fff;
             background-color: rgb(10, 102, 194);
             border: none;
             border-radius: 40px;
             cursor: pointer;
+            transition: background-color 0.3s, border-width 2s;
         }
 
         .save-button {
-            width: 100px;
-            height: 40px;
+            padding: 12px 20px;
             font-weight: 700;
             color: #2d63bc;
             border: 1px solid #2d64bc;
@@ -82,61 +98,13 @@
             border-radius: 40px;
             background-color: #fff;
             font-size: 1rem;
+            transition: background-color 0.3s, border-width 2s;
         }
 
-        div {
-            margin-top: 20px;
-        }
-
-        .back-to-amazon {
-            color: rgb(0, 113, 133);
-            text-decoration: none;
-        }
-
-        .back-to-amazon:hover {
-            text-decoration: underline;
-            color: rgb(199, 81, 31);
-        }
-
-        .nike {
-            font-size: 2rem;
-            font-weight: 700;
-        }
-
-        .dollar {
-            color: rgb(0, 118, 0);
-            font-size: 1.3rem;
-        }
-
-        .add-to-cart-button {
-            background-color: rgb(255, 216, 20);
-            border: none;
-            width: 100px;
-            height: 30px;
-            border-radius: 30px;
-            margin-right: 8px;
-            cursor: pointer;
-        }
-
-        .add-to-cart-button:hover {
-            background-color: rgb(247, 202, 0);
-        }
-
-        .buy-button {
-            background-color: rgb(255, 164, 28);
-            border: none;
-            width: 100px;
-            height: 30px;
-            border-radius: 30px;
-            cursor: pointer;
-        }
-
-        .buy-button:hover {
-            background-color: rgb(250, 137, 0);
-        }
-
-        .buy-button:active {
-            opacity: 0.5;
+        .apply-button:hover,
+        .save-button:hover {
+            background-color: #ccc;
+            border-width: 8px;
         }
     </style>
 </head>
@@ -154,14 +122,6 @@
     <!-- LinkedIn -->
     <button class="apply-button">Apply on company website</button>
     <button class="save-button">Save</button>
-    <div>
-        <a href="https://amazon.com" class="back-to-amazon">Back to Amazon</a>
-        <h3 class="nike">Nike Black Running Shoes</h3>
-        <p class="dollar">$39 - in stock.</p>
-        <p>Free delivery tomorrow.</p>
-        <button class="add-to-cart-button">Add to Cart</button>
-        <button class="buy-button">Buy now</button>
-    </div>
 </body>
 
 </html>

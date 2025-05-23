@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1 a {
+            padding: 0 3px;
+        }
+
+        .stretch-button {
+            background-color: green;
+            padding: 12px 15px;
+            border: none;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 700;
+            transition: padding 0.3s;
+        }
+
+        .stretch-button:hover {
+            padding: 24px 30px;
+        }
+
+        .shadow-button {
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            cursor: pointer;
+            box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.3);
+        }
+        .shadow-button:active {
+            margin-top: 3px;
+            margin-left: 3px;
+            box-shadow: none;
+        }
+        .together {
+            background-color: green;
+            color: white;
+            border: none;
+            font-size: 18px;
+            padding: 8px 16px;
+            margin: 6px 10px;
+            cursor: pointer;
+            transition: padding 0.3s, margin 0.3s;
+        }
+        .together:hover {
+            padding: 12px 20px;
+            margin: 10px 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <button>Back</button>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <button>Next</button>
+    </div>
+
+    <button class="stretch-button">Stretch</button>
+    <button class="shadow-button">Shadow</button>
+
+    <button class="together">One</button>
+    <button class="together">Two</button>
+    <button class="together">Three</button>
+</body>
+
+</html>
