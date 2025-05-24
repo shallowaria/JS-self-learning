@@ -1,0 +1,40 @@
+div[class^='lightblue'] {
+    background-color: lightblue;
+    width: 200px;
+}
+
+div[class^='lightpink'] {
+    background-color: lightpink;
+    width: 100px;
+}
+
+.flexbox {
+    display: flex;
+}
+
+* {
+    margin: 0;
+}
+/*
+.lightpink1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.lightpink1 p {
+    background-color: black;
+    color: #fff;
+} */
+
+.row2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.row2-item {
+    background-color: black;
+    color: white;
+}
