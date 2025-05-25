@@ -60,6 +60,7 @@ body {
 }
 
 .add-button-container {
+    display: none;
     position: absolute;
     height: 100px;
     left: 0;
