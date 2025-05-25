@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +20,9 @@
             left: 0;
             right: 0;
             height: 50px;
+            z-index: 1;
         }
+
         .sidebar {
             background-color: green;
             color: white;
@@ -30,23 +33,42 @@
             width: 72px;
         }
 
+        .absolute {
+            position: absolute;
+            background-color: red;
+            color: white;
+            top: 0;
+            right: -10px;
+            width: 10px;
+        }
+
         .div1 {
             background-color: lightblue;
             width: 200px;
             height: 200px;
             position: static;
         }
+
         .div2 {
             background-color: lightpink;
             width: 200px;
             height: 200px;
+            position: relative;
         }
     </style>
 </head>
+
 <body>
     <div class="header">header</div>
-    <div class="sidebar">sidebar</div>
+    <div class="sidebar">
+        sidebar
+        <div class="absolute">X</div>
+    </div>
+    <div class="absolute">X</div>
     <div class="div1">div 1</div>
-    <div class="div2">div 2</div>
+    <div class="div2">div 2
+        <div class="absolute">X</div>
+    </div>
 </body>
+
 </html>

@@ -1,0 +1,89 @@
+body {
+    height: 3000px;
+}
+
+.close-button {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background-color: black;
+    color: #fff;
+    font-size: 12px;
+    padding: 4px 7px;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.gray-ads {
+    width: 320px;
+    height: 180px;
+    background-color: gray;
+    position: fixed;
+    right: 20px;
+    bottom: 20px
+}
+
+.video-time {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    background-color: black;
+    color: white;
+    padding: 0 3px;
+}
+
+.cart {
+    width: 300px;
+    height: 400px;
+    background-color: gray;
+}
+
+.shopping {
+    position: relative;
+}
+
+.shopping img {
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.shopping .discount {
+    position: absolute;
+    background-color: black;
+    color: #fff;
+    top: 10px;
+    right: 0;
+    padding: 0 10px;
+    font-size: 14px;
+}
+
+.add-button-container {
+    position: absolute;
+    height: 100px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 255, 255, 0.5);
+    z-index: 1;
+}
+
+.add-button {
+    position: absolute;
+    color: rgb(0, 0, 0);
+    border: 1px solid #ccc;
+    cursor: pointer;
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    z-index: 2;
+}
+
+.shopping:hover .add-button-container {
+    display: block;
+}
