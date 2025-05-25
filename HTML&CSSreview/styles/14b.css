@@ -1,0 +1,48 @@
+body {
+    height: 3000px;
+    padding-left: 100px;
+}
+
+.sidebar1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100px;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    padding-top: 30px;
+    background-color: rgba(0, 0, 0, 0.438);
+}
+
+.sidebar1 img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.sidebar2 {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 100px;
+    width: 200px;
+    background-color: rgba(8, 6, 6, 0.589);
+    padding-left: 20px;
+}
+.section1 {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.section1 p {
+    color: white;
+}
+
+.section2 p {
+    color: rgb(207, 207, 207);
+}
