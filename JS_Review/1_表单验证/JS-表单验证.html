@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>表单控制</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul,
+      ol {
+        list-style: none;
+      }
+      .container {
+        border: 1px solid #000;
+        width: 300px;
+        margin: 100px auto;
+      }
+      h3 {
+        text-align: center;
+      }
+      .form-group {
+        display: flex;
+        margin: 10px;
+      }
+      .form-label {
+        flex: 1;
+        text-align: right;
+        margin-right: 10px;
+      }
+      .form-input {
+        flex: 2;
+      }
+      .error {
+        display: none;
+        color: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h3>用户注册</h3>
+      <div class="form-group">
+        <label for="username" class="form-label">用户名</label>
+        <div class="form-input">
+          <input type="text" id="username" />
+          <span class="error"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password" class="form-label">密码</label>
+        <div class="form-input">
+          <input type="password" id="password" />
+          <span class="error"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="rePassword" class="form-label">确认密码</label>
+        <div class="form-input">
+          <input type="password" id="rePassword" />
+          <span class="error"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="form-label">性别</label>
+        <div class="form-input">
+          <input type="radio" name="gender" />男
+          <input type="radio" name="gender" />女
+          <span class="error"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="grade" class="form-label">年级</label>
+        <div class="form-input">
+          <select name="" id="grade">
+            <option value="-1">请选择</option>
+            <option value="2021">2021级</option>
+            <option value="2020">2020级</option>
+            <option value="2019">2019级</option>
+          </select>
+          <span class="error"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="form-label">爱好</label>
+        <div class="form-input">
+          <input type="checkbox" name="hobby" value="sing" />唱歌
+          <input type="checkbox" name="hobby" value="dance" />跳舞
+          <input type="checkbox" name="hobby" value="paint" />画画
+          <span class="error"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email" class="form-label">邮箱</label>
+        <div class="form-input">
+          <input type="text" id="email" />
+          <span class="error"></span>
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="" class="form-label"></label>
+        <div class="form-input">
+          <button id="submit">提交</button>
+        </div>
+      </div>
+    </div>
+    <script>
+      let submit = document.getElementById("submit");
+      let username = document.getElementById("username");
+      let password = document.getElementById("password");
+      let rePassword = document.getElementById("rePassword");
+      let email = document.getElementById("email");
+      let genders = [...document.getElementsByName("gender")];
+      let hobbies = [...document.getElementsByName("hobby")];
+
+      submit.onclick = function () {
+        if (username.value.trim() === "") {
+          showError(username, "请输入用户名");
+        } else {
+          hideError(username);
+        }
+
+        if (password.value.trim().length < 6) {
+          showError(password, "密码长度不能小于6");
+        } else {
+          hideError(password);
+        }
+
+        if (rePassword.value.trim() !== password.value.trim()) {
+          showError(rePassword, "两次输入的密码不一致！");
+        } else {
+          hideError(rePassword);
+        }
+
+        if (email.value.trim().indexOf("@") === -1) {
+          showError(email, "邮箱格式不对");
+        } else {
+          hideError(email);
+        }
+
+        check(genders, "请输入性别");
+        check(hobbies, "请至少选择一个爱好");
+      };
+
+      function check(elems, message) {
+        let isChecked = elems.some((e) => e.checked);
+
+        if (!isChecked) {
+          showError(elems[elems.length - 1], message);
+        } else {
+          hideError(elems[elems.length - 1]);
+        }
+      }
+
+      function showError(elem, message) {
+        let error = elem.nextElementSibling;
+        error.innerHTML = message;
+        error.style.display = "block";
+      }
+      function hideError(elem) {
+        let error = elem.nextElementSibling;
+        error.innerHTML = "";
+        error.style.display = "none";
+      }
+    </script>
+  </body>
+</html>
