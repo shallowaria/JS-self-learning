@@ -35,6 +35,7 @@ renderComments(comments);
 btnSubmit.onclick = function () {
   let nameStr = nameInput.value.replace(/<(\/?\w+)>/g, "&lt;$1&gt;");
   let commentStr = commentInput.value.replace(/<(\/?\w+)>/g, "&lt;$1&gt;");
+  if (!nameStr || !commentStr) return alert("Please type something due");
   comments.unshift({
     name: nameStr,
     comment: commentStr,
