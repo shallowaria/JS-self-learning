@@ -6,7 +6,7 @@ const comments = [
   },
   {
     name: "Murasame",
-    comment: "余はなかなか強いぞ！",
+    comment: "余はなかなか強いぞ！1",
     time: "Thu Jan 11 2025",
   },
 ];
