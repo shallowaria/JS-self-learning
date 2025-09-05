@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>购物车</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      .container {
+        width: 400px;
+        margin: 50px auto;
+      }
+      .container h1 {
+        margin: 22px 0;
+      }
+      .add-box {
+        margin-top: 10px;
+        display: flex;
+      }
+      .shopping-form {
+        margin-bottom: 30px;
+      }
+      #item-name {
+        background: #f2ecee;
+        width: 250px;
+        padding: 12px 8px;
+        border: none;
+        border-left: 7px solid #d9cfd3;
+        border-radius: 3px;
+        cursor: pointer;
+        text-align: center;
+        font-size: 16px;
+        outline: none;
+        flex-grow: 1;
+        font-weight: 600;
+      }
+      ::placeholder {
+        color: #d9cfd3;
+      }
+      .btn {
+        font-size: 14px;
+        font-weight: 600;
+        padding: 10px 30px;
+        border: none;
+        border-radius: 3px;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+      #btn-add {
+        color: #fff;
+        background: #1c6c9e;
+      }
+      #btn-add:hover {
+        background-color: #1d465f;
+        transition: all 0.2s ease;
+      }
+      #item-name:focus {
+        border-color: #458179;
+        transition: all 0.2s ease;
+      }
+      #shopping-list li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      #shopping-list p {
+        text-indent: 10px;
+        width: 270px;
+        white-space: nowarp;
+        text-overflow: ellipsis;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>购物车添加/删除</h1>
+      <div class="shopping-form">
+        <label for="item-name">消费名称</label>
+        <div class="add-box">
+          <input type="text" id="item-name" placeholder="输入购物名称" />
+          <button id="btn-add" class="btn">添加</button>
+        </div>
+      </div>
+      <ul id="shopping-list"></ul>
+    </div>
+    <script>
+      const itemName = document.querySelector("#item-name");
+      const btnAdd = document.querySelector("#btn-add");
+      const shoppingList = document.querySelector("#shopping-list");
+
+      btnAdd.addEventListener("click", () => {
+        shoppingList.insertAdjacentHTML(
+          "beforeend",
+          `
+        <li>
+          <p>${itemName.value}</p>
+          <button class="btn">删除</button>
+        </li>
+        `
+        );
+        itemName.value = "";
+        // const btns = document.querySelectorAll("#shopping-list .btn");
+        // btns.forEach((btn) => {
+        //   btn.addEventListener("click", () => {
+        //     btn.parentNode.remove();
+        //   });
+        // });
+      });
+
+      //事件委托
+      shoppingList.addEventListener("click", (e) => {
+        if (e.target.classList.contains("btn")) {
+          // if (e.target.tagName === "BUTTON") {
+          e.target.parentNode.remove();
+        }
+      });
+    </script>
+  </body>
+</html>
