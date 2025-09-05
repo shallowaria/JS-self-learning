@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>小方块移动</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 500px;
+        height: 500px;
+        border: 1px solid #000;
+        margin: 50px auto;
+        position: relative;
+      }
+      #box {
+        width: 100px;
+        height: 100px;
+        background-color: #000;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="box"></div>
+    </div>
+    <script>
+      const box = document.querySelector("#box");
+      document.addEventListener("keydown", (e) => {
+        let speed = e.shiftKey ? 20 : 5;
+        if (e.keyCode === 37 && box.offsetLeft > 0) {
+          //⬅️
+          box.style.left = box.offsetLeft - speed + "px";
+        } else if (e.keyCode === 38 && box.offsetTop > 0) {
+          //⬆️
+          box.style.top = box.offsetTop - speed + "px";
+        } else if (e.keyCode === 39 && box.offsetLeft < 400) {
+          //➡️
+          box.style.left = box.offsetLeft + speed + "px";
+        } else if (e.keyCode === 40 && box.offsetTop < 400) {
+          //⬇️
+          box.style.top = box.offsetTop + speed + "px";
+        }
+      });
+    </script>
+  </body>
+</html>
