@@ -40,6 +40,9 @@
       .content-box section.active {
         display: block;
       }
+      .content-box section {
+        padding: 50px;
+      }
     </style>
   </head>
   <body>
@@ -58,17 +61,25 @@
     <script>
       const tabs = document.querySelectorAll(".tab");
       const contents = document.querySelectorAll("section");
-      for (let i = 0; i < tabs.length; i++) {
-        const element = tabs[i];
-        element.onclick = function () {
-          for (let i = 0; i < tabs.length; i++) {
-            tabs[i].classList.remove("active");
-            contents[i].classList.remove("active");
-          }
-          this.classList.add("active");
-          contents[i].classList.add("active");
-        };
-      }
+      // for (let i = 0; i < tabs.length; i++) {
+      //   const element = tabs[i];
+      //   element.onclick = function () {
+      //     for (let i = 0; i < tabs.length; i++) {
+      //       tabs[i].classList.remove("active");
+      //       contents[i].classList.remove("active");
+      //     }
+      //     this.classList.add("active");
+      //     contents[i].classList.add("active");
+      //   };
+      // }
+      tabs.forEach((tab, index) => {
+        tab.addEventListener("click", () => {
+          tabs.forEach((t) => t.classList.remove("active"));
+          contents.forEach((c) => c.classList.remove("active"));
+          tab.classList.add("active");
+          contents[index].classList.add("active");
+        });
+      });
     </script>
   </body>
 </html>
