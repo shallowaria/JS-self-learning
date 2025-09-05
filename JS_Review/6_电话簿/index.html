@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>电话簿</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      .container header {
+        background: #266986;
+        color: #fff;
+        padding: 15px;
+        line-height: 50px;
+      }
+      .contact-list-wrapper {
+        background: #7d8392;
+        padding: 20px 30px;
+      }
+      .search-box {
+        margin-bottom: 20px;
+        position: relative;
+      }
+      .search-box input {
+        width: 100%;
+        border: none;
+        border-radius: 3px;
+        outline: none;
+        height: 40px;
+        text-indent: 10px;
+      }
+      #btn-clear {
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        cursor: pointer;
+        display: none;
+      }
+      .contact-list li {
+        background: #fff;
+        margin-bottom: 20px;
+        border-radius: 3px;
+        padding: 20px;
+      }
+      .contact-list li p.name {
+        margin-bottom: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>电话簿</header>
+      <div class="contact-list-wrapper">
+        <div class="search-box">
+          <input type="text" id="search-input" placeholder="搜索联系人" />
+          <span id="btn-clear">X</span>
+        </div>
+        <ul class="contact-list">
+          <!-- <li>
+            <p class="name">Kayblis</p>
+            <p class="tel">114514</p>
+          </li>
+          <li>
+            <p class="name">Murasame</p>
+            <p class="tel">1919810</p>
+          </li> -->
+        </ul>
+      </div>
+    </div>
+    <script>
+      const contactData = [
+        { name: "Kayblis", tel: "114514" },
+        { name: "Murasame", tel: "1919810" },
+        { name: "Amelia", tel: "114514" },
+        { name: "Kartrin", tel: "1919810" },
+      ];
+
+      const contactList = document.querySelector(".contact-list");
+      const searchInput = document.querySelector("#search-input");
+      const btnClear = document.querySelector("#btn-clear");
+
+      renter(contactData);
+
+      let result = [];
+
+      searchInput.addEventListener(
+        "keyup",
+        (e) => {
+          if (
+            (e.keyCode >= 48 && e.keyCode <= 57) ||
+            (e.keyCode >= 65 && e.keyCode <= 90) ||
+            e.keyCode === 8
+          ) {
+            result = contactData.filter((item) => {
+              // if (
+              //   item.name.includes(searchInput.value) ||
+              //   item.tel.includes(searchInput.value)
+              // );
+              // return item;
+              const reg = RegExp(searchInput.value, "i");
+              if (item.name.search(reg) != -1 || item.tel.search(reg) != -1) {
+                return item;
+              }
+            });
+            renter(result);
+
+            // if (searchInput.value.trim() === "") {
+            //   btnClear.style.display = "none";
+            // } else {
+            //   btnClear.style.display = "block";
+            // }
+            btnClear.style.display =
+              searchInput.value.trim() === "" ? "none" : "block";
+          }
+        },
+        false
+      );
+
+      btnClear.addEventListener("click", () => {
+        searchInput.value = "";
+        btnClear.style.display = "none";
+        renter(contactData);
+      });
+
+      function renter(arr) {
+        contactList.innerHTML = "";
+        arr.forEach((item) => {
+          contactList.insertAdjacentHTML(
+            "beforeend",
+            `
+        <li>
+            <p class="name">${item.name}</p>
+            <p class="tel">${item.tel}</p>
+          </li>
+        `
+          );
+        });
+      }
+    </script>
+  </body>
+</html>
