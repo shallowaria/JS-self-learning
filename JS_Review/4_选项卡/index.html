@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>选项卡</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      li {
+        list-style: none;
+      }
+      .container {
+        background: rgb(181, 231, 180);
+        margin: 50px auto;
+        width: 400px;
+      }
+      .tabs {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        border-bottom: 1px solid #000;
+      }
+      .tab {
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .tab.active {
+        background: #adc7df;
+        color: #fff;
+      }
+      .content-box section {
+        height: 400px;
+        display: none;
+      }
+      .content-box section.active {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <ul class="tabs">
+        <li class="tab active">标题1</li>
+        <li class="tab">标题2</li>
+        <li class="tab">标题3</li>
+      </ul>
+      <div class="content-box">
+        <section class="active">标题一对应内容</section>
+        <section>标题二对应内容</section>
+        <section>标题三对应内容</section>
+      </div>
+    </div>
+    <script>
+      const tabs = document.querySelectorAll(".tab");
+      const contents = document.querySelectorAll("section");
+      for (let i = 0; i < tabs.length; i++) {
+        const element = tabs[i];
+        element.onclick = function () {
+          for (let i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove("active");
+            contents[i].classList.remove("active");
+          }
+          this.classList.add("active");
+          contents[i].classList.add("active");
+        };
+      }
+    </script>
+  </body>
+</html>
