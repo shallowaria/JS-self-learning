@@ -129,7 +129,10 @@
           hideError(password);
         }
 
-        if (rePassword.value.trim() !== password.value.trim()) {
+        if (
+          rePassword.value.trim() !== password.value.trim() ||
+          rePassword.value.trim() === ""
+        ) {
           showError(rePassword, "两次输入的密码不一致！");
         } else {
           hideError(rePassword);
